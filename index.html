@@ -1,25 +1,6 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-<script>
-// Eski Service Worker ni majburiy o'chirish (kesh muammosi hal qilish)
-(function(){
-  if (!('serviceWorker' in navigator)) return;
-  navigator.serviceWorker.getRegistrations().then(function(regs) {
-    regs.forEach(function(reg) {
-      reg.unregister();
-    });
-  });
-  // Eski keshlarni ham o'chirish
-  if ('caches' in window) {
-    caches.keys().then(function(keys) {
-      keys.forEach(function(key) {
-        if (key !== 'jm-v202604201232') caches.delete(key);
-      });
-    });
-  }
-})();
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>Jaloliddin Math</title>
